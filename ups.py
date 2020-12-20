@@ -64,7 +64,6 @@ def patch_ups(source, patch, target):
         source_file = file.read()
     with open(patch, "rb") as file:
         patch_file = file.read()
-    target_fd = open(target, "wb")
 
     checksum_input = int.from_bytes(patch_file[-12:-8], byteorder="little")
     if checksum_input != zlib.crc32(source_file):
@@ -85,7 +84,6 @@ def patch_ups(source, patch, target):
     rom_offset = 0
     while ptr < len(patch_file) - 12:
         offset, ptr = read_vlv(patch_file, ptr)
-        start = ptr
         diff = []
         while patch_file[ptr] != 0:
             diff.append(patch_file[ptr])
@@ -101,6 +99,7 @@ def patch_ups(source, patch, target):
     if CHECKSUM_TARGET and checksum_output != zlib.crc32(target_file):
         raise ChecksumError
 
+    target_fd = open(target, "wb")
     target_fd.write(target_file)
     target_fd.close()
 
