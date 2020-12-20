@@ -7,7 +7,7 @@ A ups patch manager for the FEGBA hacking community.
 Download HackManager.exe
 
 ### Mac Users:
-Download HackManager.dmp and install that
+Download HackManager.dmp
 
 
 ## How to Use:
