@@ -28,6 +28,8 @@ def cd_current():
         if ".app" in dirname:
             dirname = re.sub(r"\.app.*$", ".app", dirname)
             dirname = os.path.dirname(dirname)
+    if dirname == "":
+        dirname = "./"
     os.chdir(dirname)
 
 
