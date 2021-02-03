@@ -11,7 +11,7 @@ Download HackManager.dmg
 
 
 ## How to Use:
-Put HackManager.exe or HackManager.app in a folder. Put your base roms in the same folder, name them **FE6_clean.gba**, **FE7_clean.gba**, **FE8_clean.gba**. Opening the program will create two folders: **patch** and **rom**. Put you patches in the **patch** folder, and click the **Apply Patches** button, the application will automatically find the correct patch and put the patched roms in the **rom** folder.
+Put HackManager.exe or HackManager.app in a folder. Put your base roms in the same folder, name them **FE6_clean.gba**, **FE7_clean.gba**, **FE8_clean.gba**, **FE7J_clean.gba**, **FE8J_clean.gba**. Opening the program will create two folders: **patch** and **rom**. Put you patches in the **patch** folder, and click the **Apply Patches** button, the application will automatically find the correct patch and put the patched roms in the **rom** folder.
 
 
 ## How to Use with Command Line:
