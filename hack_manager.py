@@ -2,7 +2,7 @@
 # GBA FE Hack Manager by MinN
 #
 # To use: run this once to create a rom folder for your hack roms and a patch folder for your patches
-# Put FE6_clean.gba FE7_clean.gba FE8_clean.gba in the parent folder as patching targets
+# Put FE6_clean.gba FE7_clean.gba FE8_clean.gba FE7J_clean.gba FE8J_clean.gba in the parent folder as patching targets
 # This tool will not verify your FE roms' checksum so do it yourself
 # Put your patches in the patch folder and
 # run this script to patch and/or update your hack roms
@@ -64,6 +64,8 @@ def main():
     fe6_checksum = ups.checksum("FE6_clean.gba") if os.path.isfile("FE6_clean.gba") else -1
     fe7_checksum = ups.checksum("FE7_clean.gba") if os.path.isfile("FE7_clean.gba") else -1
     fe8_checksum = ups.checksum("FE8_clean.gba") if os.path.isfile("FE8_clean.gba") else -1
+    fe7j_checksum = ups.checksum("FE7J_clean.gba") if os.path.isfile("FE7J_clean.gba") else -1
+    fe8j_checksum = ups.checksum("FE8J_clean.gba") if os.path.isfile("FE8J_clean.gba") else -1
     patches = [f for f in os.listdir("patch") if os.path.isfile(os.path.join("patch", f)) and f.endswith(".ups")]
     roms = [f for f in os.listdir("rom") if os.path.isfile(os.path.join("rom", f)) and f.endswith(".gba")]
     saves = [f for f in os.listdir("rom") if os.path.isfile(os.path.join("rom", f)) and f.endswith(".sav")]
@@ -84,6 +86,10 @@ def main():
                 base_rom = "FE7_clean.gba"
             elif src_checksum == fe8_checksum:
                 base_rom = "FE8_clean.gba"
+            elif src_checksum == fe7j_checksum:
+                base_rom = "FE7J_clean.gba"
+            elif src_checksum == fe8j_checksum:
+                base_rom = "FE8J_clean.gba"
             else:
                 bad_ups_count += 1
                 print("Cannot find a ROM for patch {}".format(i))
